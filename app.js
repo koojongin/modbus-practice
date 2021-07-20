@@ -1,3 +1,4 @@
+require('dotenv').config({path: '.env'});
 const {getConnection, rangeFind} = require("./modbus.js");
 
 async function getData() {
