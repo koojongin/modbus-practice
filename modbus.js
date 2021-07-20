@@ -2,9 +2,7 @@ const ModbusRTU = require("modbus-serial");
 const {REGISTER_FORMAT} = require("./register-map");
 const client = new ModbusRTU();
 const {registerRangeMap} = require('./register-map.js')
-
-const DEVICE_HOST = '118.131.6.218'
-const DEVICE_PORT = 502
+const {DEVICE_HOST, DEVICE_PORT} = process.env;
 
 async function getConnection() {
   return client.connectTCP(DEVICE_HOST, {port: DEVICE_PORT});
